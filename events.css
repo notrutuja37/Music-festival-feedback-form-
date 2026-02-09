@@ -1,0 +1,116 @@
+/* ===== IMPORT FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+
+/* ===== BACKGROUND IMAGE WITH BLUR ===== */
+body {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Background image layer */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("crowd_music_festival.jpg") center/cover no-repeat;
+    filter: blur(2px); /* ~60% soft blur look */
+    transform: scale(1.1); /* prevents blur edges */
+    z-index: -1;
+}
+
+/* Dark aesthetic overlay */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: -1;
+}
+
+/* ===== CENTER CONTAINER ===== */
+.container {
+    width: 70%;
+    margin: 60px auto;
+    padding: 36px;
+    border-radius: 16px;
+    
+    /* WHITE FRONT CARD */
+    background: rgb(253,245,230);
+    color: black;
+
+    /* SOFT GLASS EFFECT */
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.4),
+        0 0 0 1px rgba(255,255,255,0.3) inset;
+}
+
+/* ===== TITLE ===== */
+h2 {
+    color: black;
+    margin-bottom: 5px;
+}
+
+/* ===== QUESTIONS ===== */
+.question {
+    margin-bottom: 20px;
+}
+
+/* ===== INPUT FIELDS ===== */
+input[type="text"] {
+    width: 100%;
+    padding: 11px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: white;
+    color: black;
+    outline: none;
+    font-family: 'Work Sans', sans-serif;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #d47f5b;
+    box-shadow: 0 0 6px rgba(212,127,91,0.4);
+}
+
+/* ===== RADIO ===== */
+label {
+    display: block;
+    margin: 6px 0;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    accent-color: #d47f5b;
+    margin-right: 8px;
+}
+
+/* ===== DARK PEACH BUTTON ===== */
+button {
+    width: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #d47f5b;
+    color: white;
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(212,127,91,0.4);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: 30px auto;
+    }
+}
